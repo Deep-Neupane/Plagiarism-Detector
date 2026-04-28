@@ -1,0 +1,17 @@
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnpm-debug.log
+.env
+.env.local
+.env.*.local
+backend/uploads/
+prisma/dev.db*
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+dist/
+build/
+logs/
+*.log
