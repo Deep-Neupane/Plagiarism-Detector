@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model FileUpload {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  
+  files UploadedFile[]
+}
+
+model UploadedFile {
+  id          String   @id @default(cuid())
+  fileUploadId String
+  fileUpload  FileUpload @relation(fields: [fileUploadId], references: [id], onDelete: Cascade)
+  
+  filename  String
+  filepath  String     // full path like: /uploads/file123.txt
+  fileSize  Int
+  uploadedAt DateTime  @default(now())
+}
