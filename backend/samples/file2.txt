@@ -1,0 +1,1 @@
+AI is a subset of machine learning that allows computers to learn from data automatically. It employs algorithms to find patterns in information.

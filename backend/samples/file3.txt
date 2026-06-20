@@ -1,0 +1,1 @@
+Python is a popular programming language used for web development and data science. It has a simple syntax and large community support.
