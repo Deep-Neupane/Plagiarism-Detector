@@ -1,5 +1,6 @@
 import React from "react";
 import { FileSearch, Sparkles, Eye } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 export default function HomeSection() {
   return (
@@ -19,11 +20,14 @@ export default function HomeSection() {
         </p>
 
         {/* Glowing Call-to-Action Button */}
-        <div className="mb-20">
+        <NavLink to="/upload">
+          <div className="mb-20">
           <button className="px-6 py-3 bg-[#cca64f] hover:bg-[#b8933f] text-[#0e1726] font-medium text-sm rounded-md transition-all duration-300 shadow-[0_0_20px_rgba(204,166,79,0.35)] hover:shadow-[0_0_25px_rgba(204,166,79,0.5)] tracking-wide cursor-pointer">
             Check for Plagiarism
           </button>
         </div>
+        </NavLink>
+        
 
         {/* Feature Grid Segment */}
         <div className="grid md:grid-cols-3 gap-6 w-full max-w-5xl text-left">
