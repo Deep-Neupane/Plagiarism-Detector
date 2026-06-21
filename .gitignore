@@ -15,3 +15,7 @@ dist/
 build/
 logs/
 *.log
+python-service/venv/
+python-service/__pycache__/
+python-service/*.pyc
+python-service/.env
