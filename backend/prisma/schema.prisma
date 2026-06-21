@@ -12,6 +12,7 @@ model FileUpload {
   createdAt DateTime @default(now())
   
   files UploadedFile[]
+  plagiarismMatches PlagiarismMatch[]
 }
 
 model UploadedFile {
@@ -23,4 +24,42 @@ model UploadedFile {
   filepath  String     // full path like: /uploads/file123.txt
   fileSize  Int
   uploadedAt DateTime  @default(now())
+
+  matches1  PlagiarismMatch[] @relation("file1")
+  matches2  PlagiarismMatch[] @relation("file2")
+}
+
+model PlagiarismMatch {
+  id        String   @id @default(cuid())
+  fileUploadId String
+  fileUpload  FileUpload @relation(fields: [fileUploadId], references: [id], onDelete: Cascade)
+  
+  file1Id   String
+  file1     UploadedFile @relation("file1", fields: [file1Id], references: [id], onDelete: Cascade)
+  
+  file2Id   String
+  file2     UploadedFile @relation("file2", fields: [file2Id], references: [id], onDelete: Cascade)
+  
+  similarityScore      Float
+  exactMatchPercentage Float
+  paraphrasePercentage Float
+  createdAt DateTime   @default(now())
+
+  matchedSections MatchedSection[]
+
+  @@map("plagiarism_matches")
+}
+
+model MatchedSection {
+  id        String   @id @default(cuid())
+  matchId   String
+  match     PlagiarismMatch @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  
+  startCharFile1 Int
+  endCharFile1   Int
+  startCharFile2 Int
+  endCharFile2   Int
+  matchedText    String
+
+  @@map("matched_sections")
 }
