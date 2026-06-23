@@ -14,7 +14,7 @@ export default function Navbar() {
     { name: "Home", path: "/", icon: Home },
     { name: "Upload", path: "/upload", icon: Upload },
     { name: "Comparison", path: "/comparision", icon: BarChart3 },
-    { name: "User", path: "/admin", icon: ShieldCheck },
+    { name: "History", path: "/history", icon: ShieldCheck },
     { name: "About", path: "/about", icon: Info },
   ];
 

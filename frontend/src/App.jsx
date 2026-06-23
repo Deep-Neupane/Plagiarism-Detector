@@ -3,6 +3,7 @@ import HomeSection from "./pages/Home";
 import About from "./pages/About";
 import Comparision from "./pages/Comparision";
 import Upload from "./components/Upload";
+import History from "./pages/History"
 import { createBrowserRouter, RouterProvider,Outlet } from "react-router-dom";
 import { Home } from "lucide-react";
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "comparision/:fileUploadId",  
         element: <Comparision />
+      },
+      {
+        path:"history",
+        element:<History/>
       }
     ]
   }
