@@ -22,8 +22,8 @@ print(f"File 2 tokens: {len(tokens2)}")
 print(f"File 3 tokens: {len(tokens3)}")
 
 
-similarity_1_2 = tfidf_similarity(tokens1, tokens1)
-similarity_1_3 = rabin_karp_similarity(tokens1, tokens1)
+similarity_1_2 = tfidf_similarity(tokens1, tokens2)
+similarity_1_3 = rabin_karp_similarity(tokens1, tokens3)
 similarity_2_3 = tfidf_similarity(tokens2, tokens3)
 
 print(f"\nFile1 vs File2: {similarity_1_2}%")

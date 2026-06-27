@@ -1,7 +1,6 @@
 import string
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 
-text = "AI is a subset of machine learning that allows computers to learn from data automatically. It employs algorithms to find patterns in information."
 
 
 
