@@ -4,6 +4,7 @@ const uploadRoutes = require('./routes/upload');
 const checkRoutes = require('./routes/check')
 const resultsRoutes = require('./routes/results')
 const historyRoutes = require('./routes/history')
+const comparisonRoutes = require('./routes/comparison')
 
 const app = express();
 app.use(cors());
@@ -13,5 +14,6 @@ app.use('/api/upload',uploadRoutes);
 app.use('/api/check',checkRoutes);
 app.use('/api/results',resultsRoutes);
 app.use('/api/history',historyRoutes);
+app.use('/api/match',comparisonRoutes);
 
 module.exports = app;

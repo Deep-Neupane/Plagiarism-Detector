@@ -13,7 +13,7 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", path: "/", icon: Home },
     { name: "Upload", path: "/upload", icon: Upload },
-    { name: "Comparison", path: "/comparision", icon: BarChart3 },
+    // { name: "Comparison", path: "/comparision", icon: BarChart3 },
     { name: "History", path: "/history", icon: ShieldCheck },
     { name: "About", path: "/about", icon: Info },
   ];

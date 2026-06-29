@@ -4,6 +4,8 @@ from services.preprocess import preprocess_text
 from services.rabin_karp import rabin_karp_similarity
 from services.tfidf import tfidf_similarity
 from services.combine_results import combine_results
+from services.preprocess_for_matched import preprocess
+from services.modified_rabin_karp import mrk
 
 app = Flask(__name__)
 CORS(app)
@@ -60,6 +62,26 @@ def detect_plagiarism():
 
     
 
+@app.route('/api/match',methods=['POST'])
+def match():
+    try:
+        data=request.json
+        text1=data.get("text1","")
+        text2=data.get("text2","")
+        token1,token1_data = preprocess(text1)
+        token2,token2_data = preprocess(text2)
+        positions = mrk(token1,token2)
+
+        return jsonify({
+            'success':True,
+            'positions':positions
+        })
+        
+
+        
+        
+    except Exception as e:
+        return jsonify({'error':str(e)}),500
 
 
 
