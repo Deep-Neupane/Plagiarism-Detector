@@ -30,3 +30,14 @@ export const getResults = async (fileUploadId) => {
     }
     return response.json();
 }
+
+export const getMatchedSections = async (matchId) => {
+  const response = await fetch(`${API_BASE_URL}/match/${matchId}`);
+  
+  if (!response.ok) {
+    console.log(response)
+    throw new Error('Failed to fetch matched sections');
+  }
+
+  return response.json();
+};
